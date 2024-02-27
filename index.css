@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  cursor: url(assets/cursorWhite.png) 16 16, auto !important;
+  font-family: poppins;
+  overflow: hidden;
+}
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Fondo negro */
+  z-index: -1; /* Coloca el fondo detrás de los demás elementos */
+}
+
+#videoPlayer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para que el video cubra toda la pantalla */
+  z-index: -1; /* Para que el video esté detrás del botón */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  filter: blur(2px) contrast(120%) brightness(70%);
+}
+
+#playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 18px;
+  background: #00000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s; /* Animación de desaparición del botón */
+  cursor: url(assets/cursorWhite.png) 16 16, auto !important;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  filter: drop-shadow(0 0 0.2rem #ffffff);
+  z-index: 99;
+}
+
+#playButton:hover {
+  opacity: 0.7; /* Opacidad reducida al pasar el mouse */
+}
+
+.hidden {
+  display: none; /* Oculta el botón y el cuadro de redes sociales */
+}
+
+#socialBox {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 486px;
+  height: 386px;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255, 0.09) !important;
+  border-radius: 10px;
+  text-align: center;
+  filter: drop-shadow(0 0 0.2rem #020202bd);
+  overflow: hidden;
+  z-index: 100;
+}
+
+#socialBox a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 12px;
+  flex-direction: row;
+  cursor: url(assets/cursorWhite.png) 16 16, auto !important;
+}
+
+#socialBox h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 56px;
+  margin-bottom: 20px; /* Espacio entre el nombre y los enlaces */
+  margin: 0px;
+  font-weight: 600px;
+  filter: drop-shadow(0 0 0.1rem #ffffff);
+  text-shadow: 1px 0 1px rgb(64, 64, 64), 2px 2px 1px rgb(240, 239, 200);
+  letter-spacing: 3px;
+}
+
+.redes {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 48px;
+  filter: drop-shadow(0 0 0.2rem #ffffff);
+  letter-spacing: 10px;
+  margin-top: 30px;
+}
+i {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+i:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.icon img {
+  width: 160px;
+  height: 160px;
+  border-radius: 100px;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0);
+}
+
+#nevermore {
+  display: none;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  bottom: 3px;
+  left: 40%;
+  white-space: nowrap;
+  font-size: 15px;
+  filter: drop-shadow(0 0 0.2rem #ffffff);
+  animation: moveText 25s linear infinite; /* Modificamos la duración para que la animación se repita constantemente */
+  text-decoration: none;
+  z-index: 1000;
+  top: 930px;
+}
+
+@keyframes moveText {
+  0% {
+    left: 0%;
+  } /* Inicio: extremo izquierdo de la página */
+  100% {
+    left: 100%;
+  } /* Fin: extremo derecho de la página */
+}
+
+#efectoFondo {
+  position: fixed; /* Fija la posición de la imagen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ajusta el ancho para cubrir toda la pantalla */
+  height: 100%; /* Ajusta la altura para cubrir toda la pantalla */
+  background: url("assets/dot.png") repeat 0 0 transparent;
+  opacity: 0.5;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  border: 0;
+  background-color: white;
+  margin: 0 auto; /* Centra horizontalmente */
+  position: absolute; /* Para posicionarla */
+  top: 0; /* Para que esté en la parte superior */
+  left: 50%; /* Ajusta según necesites */
+  transform: translateX(-50%); /* Centra horizontalmente */
+  z-index: 1000;
+  animation: rainbow 9s linear infinite;
+  background: linear-gradient(
+    to right,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  background-size: 1500% 1500%;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%; /* Inicio del gradiente */
+  }
+  50% {
+    background-position: 100% 50%; /* Mitad del gradiente */
+  }
+  100% {
+    background-position: 0% 50%; /* Final del gradiente */
+  }
+}
+
+.typewrite {
+  color: white;
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 0.2rem #ffffff);
+}
+
+.numero {
+  font-size: 0.9em;
+  color: white;
+  filter: drop-shadow(0 0 0.2rem #ffffff);
+  margin-top: 2px;
+}
+
+a {
+  color: #e4e3e3;
+  text-decoration: none;
+  cursor: inherit;
+}
+
+#iconPrincipal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  opacity: 0.7;
+}
